@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!<br>
+      Weak Password? <a class="ml-2" href="{% url 'change_password' %}  ">Change </a><br>
+  <a href="{% url 'logout' %}">logout</a>
+  
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+<h1> <strong>ATTENTION!! 
+This website is still under active Development, New features will be available soon! </strong></h1 >
+{% endblock %}
